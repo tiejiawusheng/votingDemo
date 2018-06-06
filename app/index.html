@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>区块链投票Dapp</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+</head>
+
+<body class="row">
+  <div class="container">
+      <h1 class="text-center banner">区块链投票Dapp</h1>
+      <h4>
+        本次投票主要用于选出您认为最流行的开发语言，只要是以太坊的用户都可以参与，输入以太坊账号地址登记，就可以获得投票权，每人最多两票。
+      </h4>
+    <div class="row margin-top-3">
+      <div class="col-sm-4">
+        <h2>投票活动信息</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>投票信息</th>
+                <th>数量</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>总票数</td>
+                <td id="tokens-total"></td>
+              </tr>
+              <tr>
+                <td>剩余票数</td>
+                <td id="tokens-balance"></td>
+              </tr>
+              <tr>
+                <td>选举人数</td>
+                <td id="voter-count"></td>
+              </tr>
+              <tr>
+                <td>每人选票</td>
+                <td id="vote-per-user"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-offset-1 col-sm-7">
+        <h2>候选语言列表</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>候选语言</th>
+                <th>票数</th>
+              </tr>
+            </thead>
+            <tbody id="proposals">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row margin-bottom-3">
+      <div class="col-sm-4">
+        <div class="col-sm-12 form">
+          <h2>我的信息</h2>
+          <div>账号地址：</div>
+          <div id="userInfo-address"></div>
+          <div>票数：</div>
+          <div id="userInfo-vote-count"></div>
+          <div>投票记录</div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>候选人</th>
+                <th>票数</th>
+              </tr>
+            </thead>
+            <tbody id="userInfo-history">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-offset-1 col-sm-7">
+        <h2>投票登记</h2>
+        <div id="msg"></div>
+        <div class="form-inline">
+          <div class="form-group">
+            <label>账号地址:</label>
+            <input type="text" class="form-control" style="width:400px;" id="user-address" placeholder="例如:0xf17f521...">
+          </div>
+          <button onclick="regist()" class="btn btn-primary">登记查询</button>
+        </div>
+        <div id="vote-action">
+          <h2>投票</h2>
+          <form id="vote-rows">
+          </form>
+          <div class="form-inline" style="margin-top:20px;">
+            <div class="form-group">
+              <label>票数:</label>
+              <input type="text" class="form-control" id="vote-count" placeholder="例如:1">
+            </div>
+            <button onclick="vote()" class="btn btn-primary">投票</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="app.js"></script>
+
+</html>
